@@ -1,82 +1,133 @@
-# Customer Churn Prediction using Machine Learning
+# 📊 Customer Churn Prediction
+### Machine Learning | Telco Customer Analytics
 
-## 📌 Project Overview
+<p align="center">
+  <strong>Turning customer data into insights for better retention decisions.</strong>
+</p>
 
-This project focuses on predicting customer churn using Machine Learning techniques. Customer churn occurs when customers stop using a company's services. Predicting churn can help businesses identify customers who may be at risk of leaving.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn"/>
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"/>
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black" alt="Google Colab"/>
+</p>
 
-The project uses the Telco Customer Churn dataset to explore customer information, train a classification model, and evaluate its performance.
+---
 
-## 🎯 Objectives
+## 🎯 Project Overview
 
-- Analyze customer data to understand churn patterns.
-- Prepare the dataset for Machine Learning.
-- Train a classification model to predict customer churn.
-- Tune model hyperparameters using GridSearchCV.
-- Compare model performance before and after tuning.
+Customer churn occurs when customers discontinue a company's services. Identifying customers who may leave helps businesses understand customer behaviour and develop better retention strategies.
 
-## 📊 Dataset
+This project uses the **Telco Customer Churn dataset** to explore customer information, prepare data, train a classification model, and evaluate its performance before and after hyperparameter tuning.
 
-**Dataset:** Telco Customer Churn
+## ✨ Project Highlights
 
+- 📂 Data loading and quality checks
+- 🔍 Exploratory data analysis (EDA)
+- 🧹 Data preprocessing and feature preparation
+- 🤖 Machine learning classification
+- ⚙️ Hyperparameter tuning using `GridSearchCV`
+- 📈 Model evaluation and performance comparison
+
+## 📁 Dataset
+
+**Dataset:** Telco Customer Churn  
 **Source:** [Kaggle — Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-The dataset contains customer information, subscribed services, account details, billing information, and the churn status.
+The dataset contains customer demographics, subscribed services, account details, billing information, and churn status.
 
-The target variable is `Churn`, which indicates whether a customer has left the service.
+| Attribute | Description |
+|---|---|
+| Input features | Customer, service, account, and billing information |
+| Target variable | `Churn` |
+| Prediction task | Binary classification |
+| Target classes | `Yes` — churned, `No` — did not churn |
 
-## 🛠️ Technologies Used
+## 🔄 Project Workflow
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib / Seaborn (if used in the notebook)
-- Google Colab
-- Machine Learning classification techniques
+```mermaid
+flowchart TD
+    A[Load Dataset] --> B[Data Quality Checks]
+    B --> C[Exploratory Data Analysis]
+    C --> D[Data Preprocessing]
+    D --> E[Feature and Target Preparation]
+    E --> F[Train Classification Model]
+    F --> G[Hyperparameter Tuning with GridSearchCV]
+    G --> H[Evaluate Model]
+    H --> I[Compare Results]
+```
 
-## ⚙️ Project Workflow
+## 📈 Model Results
 
-1. **Data Loading:** Load the Telco Customer Churn dataset.
-2. **Data Preprocessing:** Inspect missing values, duplicates, data types, and data quality.
-3. **Exploratory Analysis:** Examine customer attributes and churn distribution, where applicable.
-4. **Feature Preparation:** Prepare the features and target variable for model training.
-5. **Model Training:** Train the initial classification model.
-6. **Hyperparameter Tuning:** Use GridSearchCV to search for better model settings.
-7. **Evaluation:** Compare model performance using accuracy, precision, recall, F1-score, and a confusion matrix.
-8. **Comparison:** Review the original and tuned model results.
-
-## 📈 Results
-
-The notebook reports the following accuracy values:
+The notebook reports the following accuracy scores:
 
 | Model | Accuracy |
 |---|---:|
 | Original model | 73.81% |
 | Tuned model | 73.81% |
 
-The tuned model did not improve overall accuracy in this experiment. Further work could focus on feature engineering, class imbalance, and selecting evaluation metrics suited to churn prediction.
+> **Key observation:** Hyperparameter tuning did not improve the reported accuracy in this experiment. Further evaluation is needed to determine whether other metrics or modelling approaches provide better churn detection.
 
-## 🚀 How to Run
+Accuracy alone does not show how effectively a model identifies customers who actually churn. Precision, recall, F1-score, and a confusion matrix are useful additional measures.
 
-1. Open the notebook in Google Colab.
-2. Download the dataset from the Kaggle source linked above.
-3. Upload the CSV file to your Colab environment.
-4. Update the dataset path if necessary.
-5. Run the notebook cells in order.
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Programming language |
+| Pandas | Data manipulation |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization, if used |
+| Scikit-learn | Model training, evaluation, and tuning |
+| Google Colab | Notebook execution |
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/tanush090/Customer-Churn-Prediction-ML.git
+cd Customer-Churn-Prediction-ML
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Download the dataset
+
+Download the [Telco Customer Churn dataset from Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+
+Place the CSV file in your working directory or update the file path in the notebook.
+
+### 4. Run the notebook
+
+Open `Customer_Churn_Prediction_ML.ipynb` in Jupyter Notebook or upload it to [Google Colab](https://colab.research.google.com/).
+
+Run the cells in order.
 
 ## 🔮 Future Improvements
 
 - Improve recall for customers who churn.
-- Explore class imbalance handling.
-- Try alternative classification algorithms.
+- Explore class imbalance handling where appropriate.
+- Compare Logistic Regression, Random Forest, and other classifiers.
 - Perform additional feature engineering.
-- Compare models using ROC-AUC and precision-recall metrics.
-- Improve generalization through systematic validation.
+- Evaluate models using ROC-AUC and precision-recall metrics.
+- Use cross-validation for more robust model comparison.
+- Investigate model interpretability to understand churn drivers.
 
 ## 👨‍💻 Author
 
-**Tanush Kumar**
-
-B.Tech — Computer Science and Engineering (AI & ML)
-
+**Tanush Kumar**  
+B.Tech — Computer Science and Engineering (AI & ML)  
 Graduation Year: 2028
+
+---
+
+<p align="center">
+  <em>Built as a machine learning project to explore customer behaviour and churn prediction.</em>
+</p>
